@@ -20,7 +20,7 @@ int main() {
         printf("0 - Quit\n\n> ");
         scanf("%d", &option);
 
-#if defined(_WIN32)
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
         system("cls");
 #else
         system("clear");
