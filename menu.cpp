@@ -19,7 +19,12 @@ int main() {
         printf("10 - Change the value of an element\n");
         printf("0 - Quit\n\n> ");
         scanf("%d", &option);
+
+#if defined(_WIN32)
         system("cls");
+#else
+        system("clear");
+#endif
 
         switch (option) {
             case 0: {
