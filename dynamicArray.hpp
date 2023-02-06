@@ -130,6 +130,12 @@ class DynamicArray {
         arr[index] = value;
     }
 
+    void reverse() {
+        for (int i = 0; i < size / 2; ++i) {
+            swap(&arr[i], &arr[size - i - 1]);
+        }
+    }
+
     bool isEmpty() {
         return (size == 0);
     }

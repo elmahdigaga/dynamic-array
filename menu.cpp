@@ -16,7 +16,8 @@ int main() {
         printf("7 - Get an element by index\n");
         printf("8 - Find the index of an element\n");
         printf("9 - Sort the array\n");
-        printf("10 - Print the array\n");
+        printf("10 - Reverse the array\n");
+        printf("11 - Print the array\n");
         printf("0 - Quit\n\n> ");
         scanf("%d", &option);
 
@@ -85,6 +86,11 @@ int main() {
                 break;
             }
             case 10: {
+                test.reverse();
+                printf("Array reversed\n");
+                break;
+            }
+            case 11: {
                 test.print();
                 printf("\n");
                 break;
