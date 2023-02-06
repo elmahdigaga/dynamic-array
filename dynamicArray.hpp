@@ -7,7 +7,7 @@ class DynamicArray {
    private:
     int* arr = new int;
     int size = 0;
-    void changeSize(int newSize = 0) {  // Used to reallocat memory for the array
+    void resize(int newSize = 0) {  // Used to reallocat memory for the array
         arr = (int*)realloc(arr, newSize);
         if (arr == nullptr) {
             std::cerr << "Memory allocation failed\n";
@@ -70,7 +70,7 @@ class DynamicArray {
     }
 
     void push(int value) {  // Adds an element to the end of the array
-        changeSize(size + 1);
+        resize(size + 1);
         arr[size] = value;
         ++size;
     }
@@ -79,7 +79,7 @@ class DynamicArray {
             std::cerr << "Invalid index\n";
             return;
         }
-        changeSize(++size);
+        resize(++size);
         for (int i = size; i > index; --i) {
             arr[i] = arr[i - 1];
         }
@@ -88,7 +88,7 @@ class DynamicArray {
 
     void pop() {  // Removes the last element of the array
         if (size == 0) return;
-        changeSize(size - 1);
+        resize(size - 1);
         --size;
     }
     void pop(int index) {  // Removes the element at an index
@@ -100,7 +100,7 @@ class DynamicArray {
         for (int i = index; i < size; ++i) {
             arr[i] = arr[i + 1];
         }
-        changeSize(size);
+        resize(size);
     }
 
     void change(int value, int index) {  // Change the value of an element in the array
