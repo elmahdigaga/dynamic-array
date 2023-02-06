@@ -76,7 +76,7 @@ int main() {
             case 8: {
                 printf("Enter a value:\n> ");
                 scanf("%d", &value);
-                printf("Index of %d is: %d\n", value, test.indexOf(value));
+                printf("Index of %d is: %d\n", value, test.find(value));
                 break;
             }
             case 9: {

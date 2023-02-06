@@ -7,6 +7,7 @@ class DynamicArray {
    private:
     int* arr;
     int size;
+
     void resize(int newSize = 0) {  // Used to reallocat memory for the array
         arr = (int*)realloc(arr, newSize);
         if (arr == nullptr) {
@@ -14,12 +15,14 @@ class DynamicArray {
             exit(1);
         }
     }
+
     void swap(int* a, int* b) {  // Used by the sort method to swap to values
         int tmp = *a;
         *a = *b;
         *b = tmp;
     }
-    int partition(int start, int end) {  // Used by the sort method
+
+    int partition(int start, int end) {  // Used by the QuickSort method
         int pivot = arr[end];
         int i = (start - 1);
         for (int j = start; j < end; j++) {
@@ -31,6 +34,7 @@ class DynamicArray {
         swap(&arr[i + 1], &arr[end]);
         return (i + 1);
     }
+
     void quick(int start, int end) {  // the QuickSort algorithm
         if (start < end) {
             int pi = partition(start, end);
@@ -44,6 +48,7 @@ class DynamicArray {
         arr = new int;
         size = 0;
     }
+
     ~DynamicArray() {  // Destructor
         delete[] arr;
     }
@@ -56,6 +61,7 @@ class DynamicArray {
         }
         printf("]");
     }
+
     int getSize() {  // Returns the current size of the array
         return size;
     }
@@ -68,7 +74,7 @@ class DynamicArray {
         return arr[index];
     }
 
-    int indexOf(int value) {  // Returns the index of an element in the array, -1 if not found
+    int find(int value) {  // Returns the index of the 1st occurrence of an element in the array, -1 if not found
         for (int i = 0; i < size; ++i) {
             if (arr[i] == value)
                 return i;
@@ -85,6 +91,7 @@ class DynamicArray {
         arr[size] = value;
         ++size;
     }
+
     void insert(int value, int index) {  // Adds an element to a specific position in the array
         if (index > size || index < 0) {
             std::cerr << "Invalid index\n";
@@ -102,6 +109,7 @@ class DynamicArray {
         resize(size - 1);
         --size;
     }
+
     void remove(int index) {  // Removes the element at an index
         if (index >= size || index < 0 || size == 0) {
             std::cerr << "Invalid index\n";
@@ -120,6 +128,10 @@ class DynamicArray {
             return;
         }
         arr[index] = value;
+    }
+
+    bool isEmpty() {
+        return (size == 0);
     }
 };
 
