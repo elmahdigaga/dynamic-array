@@ -31,6 +31,13 @@ class DynamicArray {
         swap(&arr[i + 1], &arr[end]);
         return (i + 1);
     }
+    void quick(int start, int end) {
+        if (start < end) {
+            int pi = partition(start, end);
+            quick(start, pi - 1);
+            quick(pi + 1, end);
+        }
+    }
 
    public:
     void display() {  // Prints the elements of the array
@@ -58,12 +65,8 @@ class DynamicArray {
         return -1;
     }
 
-    void sort(int start, int end) {  // Sorts the array in ascending order
-        if (start < end) {
-            int pi = partition(start, end);
-            sort(start, pi - 1);
-            sort(pi + 1, end);
-        }
+    void sort() {  // Sorts the array in ascending order
+        quick(0, size - 1);
     }
 
     void push(int value) {  // Adds an element to the end of the array

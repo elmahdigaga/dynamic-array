@@ -7,10 +7,10 @@ int main() {
 
     int option = 0, value = 0, index = 0;
     while (true) {
-        printf("1 - Add to the end of the array\n");
-        printf("2 - Remove from the end of the array\n");
-        printf("3 - Add to a position in the array\n");
-        printf("4 - Remove from a position in the array\n");
+        printf("1 - Add element\n");
+        printf("2 - Add element to a position\n");
+        printf("3 - Remove element\n");
+        printf("4 - Remove element from a position\n");
         printf("5 - Display the array\n");
         printf("6 - Get size of the array\n");
         printf("7 - Get an element from the array\n");
@@ -33,15 +33,15 @@ int main() {
                 break;
             }
             case 2: {
-                test.pop();
-                break;
-            }
-            case 3: {
                 printf("Enter a value:\n> ");
                 scanf("%d", &value);
                 printf("Enter an index:\n> ");
                 scanf("%d", &index);
                 test.push(value, index);
+                break;
+            }
+            case 3: {
+                test.pop();
                 break;
             }
             case 4: {
@@ -72,7 +72,7 @@ int main() {
                 break;
             }
             case 9: {
-                test.sort(0, test.getSize() - 1);
+                test.sort();
                 printf("Array sorted\n");
                 break;
             }
