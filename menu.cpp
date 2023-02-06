@@ -11,12 +11,12 @@ int main() {
         printf("2 - Add element to a position\n");
         printf("3 - Remove element\n");
         printf("4 - Remove element from a position\n");
-        printf("5 - Display the array\n");
-        printf("6 - Get size of the array\n");
-        printf("7 - Get an element from the array\n");
+        printf("5 - Change an element\n");
+        printf("6 - Get size\n");
+        printf("7 - Get an element by index\n");
         printf("8 - Find the index of an element\n");
         printf("9 - Sort the array\n");
-        printf("10 - Change the value of an element\n");
+        printf("10 - Display\n");
         printf("0 - Quit\n\n> ");
         scanf("%d", &option);
 
@@ -56,8 +56,11 @@ int main() {
                 break;
             }
             case 5: {
-                test.display();
-                printf("\n");
+                printf("Enter the new value:\n> ");
+                scanf("%d", &value);
+                printf("Enter an index:\n> ");
+                scanf("%d", &index);
+                test.change(value, index);
                 break;
             }
             case 6: {
@@ -82,11 +85,8 @@ int main() {
                 break;
             }
             case 10: {
-                printf("Enter the new value:\n> ");
-                scanf("%d", &value);
-                printf("Enter an index:\n> ");
-                scanf("%d", &index);
-                test.change(value, index);
+                test.display();
+                printf("\n");
                 break;
             }
 
