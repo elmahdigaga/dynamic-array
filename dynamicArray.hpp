@@ -31,7 +31,7 @@ class DynamicArray {
         swap(&arr[i + 1], &arr[end]);
         return (i + 1);
     }
-    void quick(int start, int end) {
+    void quick(int start, int end) {  // the QuickSort algorithm
         if (start < end) {
             int pi = partition(start, end);
             quick(start, pi - 1);
@@ -48,10 +48,13 @@ class DynamicArray {
         delete[] arr;
     }
 
-    void display() {  // Prints the elements of the array
+    void print() {  // Prints the elements of the array
+        printf("[");
         for (int i = 0; i < size; ++i) {
-            printf("%d\n", arr[i]);
+            printf("%d", arr[i]);
+            if (i < size - 1) printf(", ");
         }
+        printf("]");
     }
     int getSize() {  // Returns the current size of the array
         return size;
