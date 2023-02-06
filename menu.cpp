@@ -7,10 +7,10 @@ int main() {
 
     int option = 0, value = 0, index = 0;
     while (true) {
-        printf("1 - Add element\n");
-        printf("2 - Add element to a position\n");
-        printf("3 - Remove element\n");
-        printf("4 - Remove element from a position\n");
+        printf("1 - Push an element\n");
+        printf("2 - Insert an element to a position\n");
+        printf("3 - Pop an element\n");
+        printf("4 - Remove an element from a position\n");
         printf("5 - Change an element\n");
         printf("6 - Get size\n");
         printf("7 - Get an element by index\n");
@@ -42,7 +42,7 @@ int main() {
                 scanf("%d", &value);
                 printf("Enter an index:\n> ");
                 scanf("%d", &index);
-                test.push(value, index);
+                test.insert(value, index);
                 break;
             }
             case 3: {
@@ -52,7 +52,7 @@ int main() {
             case 4: {
                 printf("Enter an index:\n> ");
                 scanf("%d", &index);
-                test.pop(index);
+                test.remove(index);
                 break;
             }
             case 5: {

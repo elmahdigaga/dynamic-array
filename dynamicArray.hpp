@@ -85,7 +85,7 @@ class DynamicArray {
         arr[size] = value;
         ++size;
     }
-    void push(int value, int index) {  // Adds an element to a specific position in the array
+    void insert(int value, int index) {  // Adds an element to a specific position in the array
         if (index > size || index < 0) {
             std::cerr << "Invalid index\n";
             return;
@@ -102,7 +102,7 @@ class DynamicArray {
         resize(size - 1);
         --size;
     }
-    void pop(int index) {  // Removes the element at an index
+    void remove(int index) {  // Removes the element at an index
         if (index >= size || index < 0 || size == 0) {
             std::cerr << "Invalid index\n";
             return;
