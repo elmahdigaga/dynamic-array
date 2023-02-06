@@ -5,8 +5,8 @@
 
 class DynamicArray {
    private:
-    int* arr = new int;
-    int size = 0;
+    int* arr;
+    int size;
     void resize(int newSize = 0) {  // Used to reallocat memory for the array
         arr = (int*)realloc(arr, newSize);
         if (arr == nullptr) {
@@ -40,6 +40,14 @@ class DynamicArray {
     }
 
    public:
+    DynamicArray() {  // Constructor
+        arr = new int;
+        size = 0;
+    }
+    ~DynamicArray() {  // Destructor
+        delete[] arr;
+    }
+
     void display() {  // Prints the elements of the array
         for (int i = 0; i < size; ++i) {
             printf("%d\n", arr[i]);
