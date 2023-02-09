@@ -3,9 +3,10 @@
 #include "dynamicArray.hpp"
 
 int main() {
-    DynamicArray test;
+    DynamicArray<int> test;
 
-    int option = 0, value = 0, index = 0;
+    int option = 0, index = 0;
+    int value = 0;
     while (true) {
         printf("1 - Push an element\n");
         printf("2 - Insert an element to a position\n");
