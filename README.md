@@ -30,7 +30,7 @@ In case you don't know what a Dynamic Array is and what it's used for, take a qu
 // Instantiate a Dynamic Array
 DynamicArray<type> myArray = DynamicArray();
 
-// Or just this
+// Or
 DynamicArray<type> myArray;
 ```
 
