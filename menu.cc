@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "dynamicArray.hpp"
+#include "dynamic_array.h"
 
 int main() {
     DynamicArray<int> test;
