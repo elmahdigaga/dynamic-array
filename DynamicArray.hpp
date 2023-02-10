@@ -67,7 +67,7 @@ class DynamicArray {
             std::cout << arr[i];
             if (i < size - 1) printf(", ");
         }
-        printf("]");
+        printf("]\n");
     }
 
     int getSize() {  // Returns the current size of the array
@@ -147,6 +147,23 @@ class DynamicArray {
 
     bool isEmpty() {
         return (size == 0);
+    }
+
+    DynamicArray operator+(DynamicArray const& obj) {
+        DynamicArray<T> result;
+        result.size = this->size + obj.size;
+        result.resize(this->size + obj.size);
+
+        int i = 0, j = 0;
+        for (i = 0; i < this->size; ++i) {
+            result.arr[i] = this->arr[i];
+        }
+        for (j = 0; j < obj.size; ++j) {
+            result.arr[i] = obj.arr[j];
+            ++i;
+        }
+
+        return result;
     }
 };
 
