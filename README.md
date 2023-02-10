@@ -119,8 +119,8 @@ bool state = myArray.isEmpty();
 ```
 
 #### Addition operator `+` overloading
-it is used to concatenate two arrays
 ```c++
+// it is used to concatenate two arrays
 // array1 = [1, 2, 3];
 // array2 = [5, 6];
 DynamicArray<T> array3 = array1 + array2;
