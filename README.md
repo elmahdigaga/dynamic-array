@@ -28,16 +28,16 @@ In case you don't know what a Dynamic Array is and what it's used for, take a qu
 #### To declare a DynamicArray object
 ```c++
 // Instantiate a Dynamic Array
-DynamicArray myArray = DynamicArray();
+DynamicArray<type> myArray = DynamicArray();
 
 // Or just this
-DynamicArray myArray;
+DynamicArray<type> myArray;
 ```
 
 #### Getting the size of the Dynamic Array
 ```c++
 // To get the size of a Dynamic Array, make use of the getSize() method
-int arrSize = myArray.getSize();
+arrSize = myArray.getSize();
 ```
 
 #### Adding elements
@@ -68,7 +68,7 @@ value = myArray.get(myArray.getSize() - 1;
 #### Searching for elements
 ```c++
 // find(value) will return the index of the element if found, -1 if not.
-int myIndex = myArray.find(value);
+myIndex = myArray.find(value);
 ```
 
 #### Changing elements
@@ -116,4 +116,13 @@ myArray.print();
 #### Check if the array is empty
 ```c++
 bool state = myArray.isEmpty();
+```
+
+#### Addition operator `+` overloading
+it is used to concatenate two arrays
+```c++
+// array1 = [1, 2, 3];
+// array2 = [5, 6];
+DynamicArray<T> array3 = array1 + array2;
+// array3 = [1, 2, 3, 5, 6];
 ```
